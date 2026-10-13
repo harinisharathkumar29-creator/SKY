@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Section -->
+    <header class="app-header">
+      <div class="header-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+        </svg>
+      </div>
+      <h1 class="app-title">My Tasks</h1>
+      <p class="app-subtitle">Stay organized and productive</p>
+    </header>
+
+    <!-- Task Input Form -->
+    <form id="todo-form" class="todo-form" novalidate>
+      <div class="input-group">
+        <input 
+          type="text" 
+          id="task-input" 
+          placeholder="What needs to be done?" 
+          autocomplete="off" 
+          aria-label="New task input"
+        >
+        <button type="submit" id="add-btn" class="btn btn-primary" aria-label="Add task">
+          <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>Add Task</span>
+        </button>
+      </div>
+      <p id="error-message" class="error-message" aria-live="polite"></p>
+    </form>
+
+    <!-- Task Counters / Summary -->
+    <div id="stats-bar" class="stats-bar">
+      <span id="task-counter" class="stat-badge">0 tasks</span>
+      <span id="completed-counter" class="stat-badge stat-badge-accent">0 completed</span>
+    </div>
+
+    <!-- Empty State (Shown when list is empty) -->
+    <div id="empty-state" class="empty-state">
+      <div class="empty-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"></path>
+          <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+        </svg>
+      </div>
+      <p class="empty-title">No tasks yet!</p>
+      <p class="empty-subtitle">Add a task above to get started.</p>
+    </div>
+
+    <!-- Task List -->
+    <ul id="task-list" class="task-list" aria-label="List of tasks"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
